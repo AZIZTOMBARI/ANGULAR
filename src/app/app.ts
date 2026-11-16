@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { ConferenceListComponent } from './conference-list.component';
+import { SiteFooterComponent } from './site-footer.component';
+import { SiteHeaderComponent } from './site-header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ConferenceListComponent, SiteFooterComponent, SiteHeaderComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('conference-app');
-}
+export class App {}
