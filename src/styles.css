@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f1f5f9;
+  color: #1e293b;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: #1e3a8a;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 0 1.5rem;
+}
+
+.dashboard-sections section {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+}

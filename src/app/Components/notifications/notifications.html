@@ -1,17 +1,15 @@
-<h3>Zone de notifications</h3>
-<p>
+<section id="notifications">
+  <h2>Zone de notifications</h2>
+  <p>
     Vous avez {{notifList.length}} notifications.
-</p>
+  </p>
 
-<button (click)="ShowNotifications()">{{btnText}}</button>
-@if (show) {
-    <div>
-        <ul>
-            @for (item of notifList; track $index) {
-                <li>
-                    {{item.message}}
-            </li>
-        }
+  <button type="button" (click)="ShowNotifications()">{{ btnText }}</button>
+  @if (show) {
+    <ul>
+      @for (item of notifList; track item.id) {
+        <li>{{ item.message }}</li>
+      }
     </ul>
-    </div>
-}
+  }
+</section>

@@ -1,6 +1,16 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
-<app-profil></app-profil>
-<app-friends></app-friends>
-<app-notifications></app-notifications>
+<main>
+  <app-conference-list
+    (conferenceSelected)="onConferenceSelected($event)"
+  ></app-conference-list>
+  <app-conference-details
+    [conference]="selectedConference"
+  ></app-conference-details>
+  <div class="dashboard-sections">
+    <app-profil></app-profil>
+    <app-friends></app-friends>
+    <app-notifications></app-notifications>
+  </div>
+</main>
 <app-footer></app-footer>
