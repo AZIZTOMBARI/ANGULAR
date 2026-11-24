@@ -1,0 +1,60 @@
+<section class="conference-section" aria-labelledby="conference-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Agenda</p>
+      <h2 id="conference-title">Liste des conférences à venir</h2>
+    </div>
+    <label class="search">
+      <span>Rechercher une conférence</span>
+      <input
+        type="search"
+        [(ngModel)]="searchTerm"
+        placeholder="Ex. Angular"
+        aria-label="Rechercher une conférence par titre"
+      />
+    </label>
+  </div>
+
+  @if (filteredConferences.length === 0) {
+    <p class="empty-state">Aucune conférence ne correspond à votre recherche.</p>
+  } @else {
+    <div class="conference-grid">
+      @for (conference of filteredConferences; track conference.id) {
+        <article class="conference-card">
+          <div class="card-topline">
+            <span class="date">{{ conference.date | date: 'dd/MM/yyyy à HH:mm' }}</span>
+            <span
+              class="availability"
+              [class.available]="remainingPlaces(conference) >= 10"
+              [class.limited]="remainingPlaces(conference) > 0 && remainingPlaces(conference) < 10"
+              [class.full]="remainingPlaces(conference) === 0"
+            >
+              @if (remainingPlaces(conference) === 0) {
+                Complet
+              } @else {
+                {{ remainingPlaces(conference) }} place(s)
+              }
+            </span>
+          </div>
+          <h3>{{ conference.title | uppercase }}</h3>
+          <p>{{ conference.description }}</p>
+          <p class="place">{{ conference.place }}</p>
+          <button
+            type="button"
+            [disabled]="remainingPlaces(conference) === 0"
+            [class.button-available]="remainingPlaces(conference) >= 10"
+            [class.button-limited]="remainingPlaces(conference) > 0 && remainingPlaces(conference) < 10"
+            [class.button-full]="remainingPlaces(conference) === 0"
+            (click)="register(conference)"
+          >
+            @if (remainingPlaces(conference) === 0) {
+              Complet
+            } @else {
+              S'inscrire
+            }
+          </button>
+        </article>
+      }
+    </div>
+  }
+</section>

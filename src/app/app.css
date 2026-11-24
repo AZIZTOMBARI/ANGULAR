@@ -1,0 +1,47 @@
+:host {
+  color: #243b53;
+  display: block;
+  min-height: 100vh;
+}
+
+main {
+  margin: auto;
+  max-width: 1180px;
+  padding: 0 1.5rem;
+}
+
+.hero {
+  align-items: center;
+  background: linear-gradient(120deg, #effcfb, #eff6ff);
+  border-radius: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  overflow: hidden;
+  padding: clamp(2rem, 7vw, 5rem);
+}
+
+.eyebrow {
+  color: #0f766e;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  margin: 0 0 .6rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #102a43;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  letter-spacing: -.05em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+h1 span { color: #0f766e; }
+.hero-text { color: #486581; font-size: 1.05rem; line-height: 1.6; margin: 1.25rem 0 0; max-width: 34rem; }
+.hero-decoration { color: #2dd4bf; font-size: 10rem; line-height: 1; opacity: .45; transform: rotate(15deg); }
+
+@media (max-width: 760px) {
+  .hero-decoration { display: none; }
+}

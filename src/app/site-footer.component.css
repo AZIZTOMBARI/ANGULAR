@@ -1,0 +1,6 @@
+:host { display: block; }
+footer { align-items: center; background: #102a43; color: #bcccdc; display: flex; justify-content: space-between; padding: 1.5rem max(1.5rem, calc((100% - 1180px) / 2)); }
+footer div { display: grid; gap: .3rem; }
+footer strong { color: #fff; }
+footer span { font-size: .8rem; }
+@media (max-width: 760px) { footer { align-items: start; flex-direction: column; gap: 1rem; } }
